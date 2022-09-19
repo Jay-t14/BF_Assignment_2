@@ -13,7 +13,7 @@
 
 <meta name="date" content="2022-09-19" />
 
-<title>Bf_assignment2</title>
+<title>BF_assignment2</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -363,7 +363,7 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Bf_assignment2</h1>
+<h1 class="title toc-ignore">BF_assignment2</h1>
 <h4 class="author">Jay Trivedi</h4>
 <h4 class="date">2022-09-19</h4>
 
@@ -441,7 +441,7 @@ head(dataset)
 names(dataset)[4] &lt;- &quot;GPA&quot;
 head(dataset)
 
-# Changing A for Ronak
+# Changing A 
 dataset [1,2] &lt;- 31
 head(dataset)
 dataset$A[1] &lt;- 33
@@ -488,7 +488,6 @@ by(dataset$A,dataset$G,summary)
 
 aggregate(dataset$A,list(&quot;Type&quot; = dataset$G),median)
 aggregate(dataset$A,list(&quot;Type&quot; = dataset$G),summary)
-
 
 </code></pre>
 </div>
