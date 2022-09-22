@@ -1,0 +1,98 @@
+install.packages("readxl")
+library("readxl")
+dataset<-read_excel("C:\\Users\\jaytr\\OneDrive\\Desktop\\Rutgers\\Business Forecasting\\Typical_Employee_Survey_Data.xlsx")
+
+colnames(dataset)<- c("A","B","C","D","E","F","G","H","I","J","K")
+
+names(dataset)
+nrow(dataset)
+ncol(dataset)
+dim(dataset)
+head(dataset)
+tail(dataset)
+str(dataset)
+class(dataset)
+
+# Column
+dataset$A
+dataset[2]
+dataset[c("A")]
+dataset[2:3]
+dataset[c("A","G")]
+# Rows
+dataset[2,]
+
+# Combined
+dataset[2:3,c("A")]
+dataset[2:3,2:3]
+
+#Levels
+
+dataset$G
+table(dataset$G)
+table(dataset$A)
+table(dataset$A, dataset$G)
+
+# Filtering
+
+dataset[dataset$A == "34",]
+
+print(dataset)
+
+# Ordering
+
+dataset[order(dataset$A),]
+dataset[order(-dataset$A),]
+
+# Change Column Name
+names(dataset)[4] <- "Grade"
+head(dataset)
+names(dataset)[4] <- "GPA"
+head(dataset)
+
+# Changing A for Ronak
+dataset [1,2] <- 31
+head(dataset)
+dataset$A[1] <- 33
+head(dataset)
+
+# Graphing
+barplot(dataset$A)
+barplot(dataset$A, main = "A of People", xlab = "People", ylab = "A", col = "Blue", names.arg = dataset$Name)
+pie(dataset$A)
+pie(dataset$A,label = dataset$Name, main = "A of People")
+stem(dataset$GPA)
+stem(dataset$A)
+hist(dataset$A)
+boxplot(dataset$A)
+boxplot(dataset$A,dataset$G)
+
+## Summary Stats
+
+min(dataset$A)
+max(dataset$A)
+range(dataset$A)
+StatRange = max(dataset$A) - min(dataset$A)
+StatRange
+mean(dataset$A)
+sd(dataset$A)
+var(dataset$A)
+sqrt(var(dataset$A))
+fivenum(dataset$A)
+IQR(dataset$A)
+quantile(dataset$A)
+summary(dataset$A)
+boxplot.stats(dataset$A)
+boxplot.stats(dataset$A)$out
+
+# Data Frame Summary
+
+summary(dataset)
+
+by(dataset$A,dataset$G,mean)
+by(dataset$A,dataset$G,sd)
+by(dataset$A,dataset$G,summary)
+
+aggregate(dataset$A,list("Type" = dataset$G),median)
+aggregate(dataset$A,list("Type" = dataset$G),summary)
+
