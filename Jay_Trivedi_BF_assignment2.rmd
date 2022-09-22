@@ -50,7 +50,7 @@ head(dataset)
 names(dataset)[4] <- "GPA"
 head(dataset)
 
-# Changing A for Ronak
+# Changing A
 dataset [1,2] <- 31
 head(dataset)
 dataset$A[1] <- 33
